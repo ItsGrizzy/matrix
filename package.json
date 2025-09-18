@@ -1,0 +1,35 @@
+{
+  "name": "netexec-command-generator",
+  "version": "1.0.0",
+  "description": "Modern web-based command generator for NetExec cybersecurity tool",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -c-1",
+    "dev": "http-server -p 8000 -c-1 -o",
+    "build": "echo 'No build step required - static files ready for deployment'",
+    "deploy": "echo 'Upload files to your web server or use GitHub Pages/Netlify/Vercel'"
+  },
+  "keywords": [
+    "netexec",
+    "cybersecurity",
+    "penetration-testing",
+    "command-generator",
+    "smb",
+    "ldap",
+    "winrm",
+    "security-tools"
+  ],
+  "author": "Cybersecurity Professional",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/netexec-command-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/netexec-command-generator/issues"
+  },
+  "homepage": "https://yourusername.github.io/netexec-command-generator"
+}

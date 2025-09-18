@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix - Cybersecurity Command Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Matrix</span>
+                    <small>Cybersecurity Command Generator</small>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-help" id="helpBtn">
+                        <i class="fas fa-question-circle"></i> HELP
+                    </button>
+                    <button class="btn btn-export" id="exportBtn">
+                        <i class="fas fa-download"></i> EXPORT
+                    </button>
+                    <a href="https://www.linkedin.com/in/prathamshah529/" class="btn" style="background: #0e76a8; color: white;">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Compact Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Command Matrix</h1>
+                <p class="hero-subtitle">Generate pentest commands instantly</p>
+            </div>
+        </section>
+
+        <!-- Single Row Inputs -->
+        <section class="inputs-section">
+            <div class="inputs-container">
+                <div class="input-group">
+                    <label for="ip"><i class="fas fa-crosshairs"></i> Target</label>
+                    <input type="text" id="ip" placeholder="192.168.1.1 or 10.0.0.0/24">
+                </div>
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                    <input type="text" id="username" placeholder="admin">
+                </div>
+                <div class="input-group">
+                    <label for="password"><i class="fas fa-key"></i> Password</label>
+                    <input type="password" id="password" placeholder="password">
+                </div>
+                <div class="input-group">
+                    <label for="domain"><i class="fas fa-building"></i> Domain</label>
+                    <input type="text" id="domain" placeholder="WORKGROUP">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Selection -->
+        <section class="tools-section">
+            <div class="tools-container">
+                <div class="tools-header">
+                    <h2>Command Arsenal</h2>
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchCommands" placeholder="Search commands...">
+                    </div>
+                </div>
+                
+                <div class="tools-nav" id="toolsNav">
+                    <button class="tool-btn active" data-tool="all">
+                        <i class="fas fa-th-large"></i>
+                        <span>All</span>
+                        <div class="count">500+</div>
+                    </button>
+                    <button class="tool-btn" data-tool="netexec">
+                        <i class="fas fa-server"></i>
+                        <span>NetExec</span>
+                        <div class="count">100</div>
+                    </button>
+                    <button class="tool-btn" data-tool="nmap">
+                        <i class="fas fa-radar-dish"></i>
+                        <span>Nmap</span>
+                        <div class="count">52</div>
+                    </button>
+                    <button class="tool-btn" data-tool="recon">
+                        <i class="fas fa-search-location"></i>
+                        <span>Recon</span>
+                        <div class="count">40+</div>
+                    </button>
+                    <button class="tool-btn" data-tool="exploitation">
+                        <i class="fas fa-bug"></i>
+                        <span>Exploit</span>
+                        <div class="count">25</div>
+                    </button>
+                    <button class="tool-btn" data-tool="web">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Web</span>
+                        <div class="count">45</div>
+                    </button>
+                    <button class="tool-btn" data-tool="windows">
+                        <i class="fab fa-windows"></i>
+                        <span>Windows</span>
+                        <div class="count">35</div>
+                    </button>
+                    <button class="tool-btn" data-tool="linux">
+                        <i class="fab fa-linux"></i>
+                        <span>Linux</span>
+                        <div class="count">28</div>
+                    </button>
+                    <button class="tool-btn" data-tool="password">
+                        <i class="fas fa-unlock-alt"></i>
+                        <span>Password</span>
+                        <div class="count">30</div>
+                    </button>
+                    <button class="tool-btn" data-tool="exploit_notes">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Post-Exploitation</span>
+                        <div class="count">40</div>
+                    </button>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="category-filter" id="categoryFilter">
+                    <!-- Categories will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Commands Grid -->
+        <section class="commands-section">
+            <div class="commands-container">
+                <div class="commands-grid" id="commandsGrid">
+                    <!-- Commands will be inserted here -->
+                </div>
+                
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <i class="fas fa-terminal"></i>
+                    <h3>No commands found</h3>
+                    <p>Try adjusting your search or selecting a different tool.</p>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" style="display: none;">
+                    <!-- Pagination will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="disclaimer" style="background: #1a1f2e; color: var(--text-secondary); padding: 2rem; font-size: 0.9rem; line-height: 1.5;">
+        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Important Disclaimer</h3>
+        <p><strong>Educational Use Only:</strong> This tool is intended for educational purposes and authorized penetration testing only. DO NOT use against systems you don't own or lack permission to test.</p>
+        <p><strong>No Responsibility:</strong> The creator takes no responsibility for any illegal use, damage, or consequences resulting from using these commands. Use at your own risk.</p>
+        <p><strong>Content Accuracy:</strong> While efforts are made to keep content current and accurate, no guarantees are provided. Commands are compiled from various internet sources and tested for functionality.</p>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2025 Matrix Command Generator. Built with ❤️ for the cybersecurity community.</p>
+                <div class="footer-links">
+                    
+                    <a href="#">GitHub</a>
+                    <a href="#" onclick="cyberMatrix.showModal('helpModal')">Docs</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Command copied to clipboard!</span>
+        </div>
+        <button class="toast-close" onclick="hideToast()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-question-circle"></i> How to Use Matrix</h3>
+                <button class="modal-close" onclick="closeModal('helpModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="help-section">
+                    <h4><i class="fas fa-rocket"></i> Quick Start</h4>
+                    <ol>
+                        <li><strong>Enter your target:</strong> IP address, domain, or network range</li>
+                        <li><strong>Add credentials:</strong> Username and password (optional)</li>
+                        <li><strong>Select tool:</strong> Choose from NetExec, Nmap, Web App, etc.</li>
+                        <li><strong>Copy commands:</strong> Click any command card to copy</li>
+                    </ol>
+                </div>
+                
+                <div class="help-section">
+                    <h4><i class="fas fa-star"></i> Features</h4>
+                    <ul>
+                        <li><strong>Works with any input:</strong> Commands work with just IP or full credentials</li>
+                        <li><strong>Real-time updates:</strong> Commands update as you type</li>
+                        <li><strong>20 commands per page:</strong> Fast loading with pagination</li>
+                        <li><strong>Export functionality:</strong> Download commands as TXT files</li>
+                        <li><strong>Click anywhere to copy:</strong> Entire command cards are clickable</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h4><i class="fas fa-keyboard"></i> Shortcuts</h4>
+                    <ul>
+                        <li><strong>Ctrl + K:</strong> Focus search box</li>
+                        <li><strong>Escape:</strong> Close modals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="netexec.js"></script>
+    <script src="nmap.js"></script>
+    <script src="web.js"></script>
+    <script src="recon.js"></script>
+    <script src="additional-tools.js"></script>
+    <script src="exploit-notes.js"></script>
+    <script src="app.js"></script>
+    <script src="active-directory.js"></script>
+    <script src="privilege-escalation.js"></script>
+    <script src="post-exploitation.js"></script>
+    <script src="osint-commands.js"></script>
+    <script src="pivoting-tunneling.js"></script>
+    <script src="wireless-security.js"></script>
+    <script src="database-buffer-overflow.js"></script>
+    <script src="advanced-pentesting.js"></script>
+
+</body>
+</html>
