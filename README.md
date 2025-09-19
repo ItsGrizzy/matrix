@@ -170,7 +170,7 @@ Export filtered commands as JSON with metadata:
 ### **GitHub Pages**
 1. Upload files to GitHub repository
 2. Enable GitHub Pages in repository settings
-3. Access via `https://yourusername.github.io/repository-name`
+3. Access via `https://github.com/ItsGrizzy/matrix`
 
 ### **Netlify/Vercel**
 1. Drag and drop project folder
@@ -198,31 +198,6 @@ Export filtered commands as JSON with metadata:
 | **Cloud** | 15+ | AWS, Azure, cloud security |
 | **Forensics** | 22+ | Disk analysis, memory forensics |
 
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### **Adding Commands**
-1. Research and verify command syntax
-2. Add to appropriate tool database file
-3. Include proper descriptions and categories
-4. Test with various input combinations
-
-### **Bug Reports**
-- Use GitHub Issues
-- Include browser version and OS
-- Provide steps to reproduce
-- Screenshots are helpful
-
-### **Feature Requests**
-- Describe the use case
-- Explain expected behavior
-- Consider implementation complexity
-
-## 📝 License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ## ⚠️ Disclaimer
 
 **Educational and Authorized Testing Only**
@@ -241,22 +216,8 @@ This tool is intended for:
 
 Users are responsible for ensuring they have proper authorization before using any generated commands against systems they do not own.
 
-## 🙏 Acknowledgments
-
-- **NetExec Team**: For the excellent network execution tool
-- **Nmap Project**: For the comprehensive network scanner
-- **OWASP**: For web application security testing methodologies
-- **Penetration Testing Community**: For sharing knowledge and techniques
-- **Open Source Contributors**: For tools and techniques referenced
-
-## 📞 Support
-
-- **GitHub Issues**: For bug reports and feature requests
-- **Documentation**: Check the built-in help system (click the Help button)
-- **Community**: Join cybersecurity forums and Discord servers
-
 ---
 
-**Made with ❤️ for the cybersecurity community**
+**Made with ❤️ for the cybersecurity community by Pratham Shah**
 
 *Stay ethical, stay curious, and happy hacking!* 🔒
