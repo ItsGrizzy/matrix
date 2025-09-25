@@ -1,6 +1,6 @@
 # 🚀 CyberCommand Matrix - Advanced Cybersecurity Command Generator
 
-A comprehensive, real-time command generator for cybersecurity professionals, penetration testers, red teamers, and CTF players. This tool provides instant access to over **300+ cybersecurity commands** across multiple tools and platforms.
+A comprehensive, real-time command generator for cybersecurity professionals, penetration testers, red teamers, and CTF players. This tool provides instant access to over **1000+ cybersecurity commands** across multiple tools and platforms.
 
 ![CyberCommand Matrix](https://img.shields.io/badge/Commands-300+-blue?style=for-the-badge) ![Tools](https://img.shields.io/badge/Tools-12+-green?style=for-the-badge) ![Real--Time](https://img.shields.io/badge/Updates-Real--Time-orange?style=for-the-badge)
 
